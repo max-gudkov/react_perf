@@ -25,7 +25,7 @@ const List = function ListView() {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(loadList(3000));
-    }, []);
+    }, [dispatch]);
 
     const rowRenderer = ({index, style}) => {
         const itemId = ids[index];

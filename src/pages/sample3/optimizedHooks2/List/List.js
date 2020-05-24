@@ -12,7 +12,7 @@ const List = function ListView() {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(loadList(3000));
-    }, []);
+    }, [dispatch]);
 
     return (
         <div className="todo-list">

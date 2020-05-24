@@ -14,7 +14,7 @@ const Sample1 = function Sample1() {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(loadList1(3000));
-    }, []);
+    }, [dispatch]);
 
     return (
         <div>
