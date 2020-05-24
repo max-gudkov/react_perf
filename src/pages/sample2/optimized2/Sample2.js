@@ -14,7 +14,7 @@ class Sample2 extends Component {
 
         return (
             <div>
-                Sample 2 [Optimized]
+                Sample 2 [Optimized 2]
                 <div>
                     <input type="text"
                         value={itemText}
@@ -28,3 +28,6 @@ class Sample2 extends Component {
 }
 
 export default Sample2;
+
+// Improvements:
+// Container components and state normalization

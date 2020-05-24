@@ -1,5 +1,5 @@
 import React from 'react';
-import DatePicker from 'react-bootstrap-date-picker';
+import DatePicker from 'react-16-bootstrap-date-picker';
 
 const ItemView = ({ item, toggle }) => {
     return (

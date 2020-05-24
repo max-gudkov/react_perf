@@ -1,11 +1,14 @@
 import React from 'react';
 
 import ItemContainer from '../Item/ItemContainer';
-import whyDidYouUpdate from '../../../../utils/whyDidYouUpdate';
+import SavingBlock from '../../../../components/SavingBlock';
+//import whyDidYouUpdate from '../../../../utils/whyDidYouUpdate';
 
 const ListView = ({ ids }) => {
     return (
         <div className="todo-list">
+            <SavingBlock/>
+
             {ids.map(id => (
                 <ItemContainer
                     key={id}

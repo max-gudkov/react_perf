@@ -20,3 +20,7 @@ class Sample3 extends Component {
 }
 
 export default Sample3;
+
+// Improvements:
+// using reselect for filtered todos
+// Saving Block has been moved to separate component

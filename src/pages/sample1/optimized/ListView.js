@@ -1,9 +1,9 @@
-import React, { Component, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 
-class ListView extends Component {
-    shouldComponentUpdate(nextProps, nextState) {
-        return this.props.list !== nextProps.list;
-    }
+class ListView extends PureComponent {
+    // shouldComponentUpdate(nextProps, nextState) {
+    //     return this.props.list !== nextProps.list;
+    // }
 
     // shouldComponentUpdate(nextProps, nextState) {
     //     return !shallowEqual(this.props, newProps) 

@@ -21,7 +21,7 @@ export function saveDate() {
     };
 };
 
-export default function filter(state = '', action) {
+export default function date(state = '', action) {
     if (action.type === SAVE_DATE) {
         return action.payload;
     }

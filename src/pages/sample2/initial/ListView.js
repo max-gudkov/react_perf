@@ -1,13 +1,13 @@
 import React, { PureComponent } from 'react';
 
-import whyDidYouUpdate from '../../../utils/whyDidYouUpdate';
+//import whyDidYouUpdate from '../../../utils/whyDidYouUpdate';
 
-@whyDidYouUpdate
+//@whyDidYouUpdate
 class ListView extends PureComponent {
 
-    componentDidUpdate(prevProps, prevState) {
-        console.log(this.props.list === prevProps.list);
-    }
+    // componentDidUpdate(prevProps, prevState) {
+    //     console.log(this.props.list === prevProps.list);
+    // }
 
     render() {
         const { list, onToggle } = this.props;

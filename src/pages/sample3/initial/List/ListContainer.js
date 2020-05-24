@@ -9,11 +9,9 @@ import { loadList } from '../../../../store/list2';
         const ids = state.list2.ids;
         const values = state.list2.values;
         const filter = state.filter;
-        
-        // debugger;
 
         return {
-            ids: ids, // ids.filter(id => values[id].name.includes(filter)),
+            ids: ids.filter(id => values[id].name.includes(filter)),
             //
             isSaving: state.isSaving
         };

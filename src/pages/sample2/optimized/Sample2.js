@@ -47,3 +47,7 @@ class Sample2 extends Component {
 }
 
 export default Sample2;
+
+// Improvements:
+// 1) onToggle handler has been changed from inline to instance prop arrow function.
+// 2) ToDo Item has been extracted to seperate component to avoid creating inline onToggle handler for each ToDo item

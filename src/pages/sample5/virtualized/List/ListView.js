@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-import AutoSizer from 'react-virtualized/dist/commonjs/AutoSizer';
-import List from 'react-virtualized/dist/commonjs/List';
+import { AutoSizer, List } from 'react-virtualized';
+import 'react-virtualized/styles.css';
 
 import SavingBlock from '../../../../components/SavingBlock';
 import ItemContainer from '../Item/ItemContainer';
 
 class ListView extends Component {
 
-    rowRenderer = ({index, key, style}) => {
+    rowRenderer = ({index, style}) => {
         const itemId = this.ids[index];
-        
         return (
-            <div key={key} style={style}>
+            <div key={itemId} style={style}>
                 <ItemContainer itemId={itemId} />
             </div>
         );
@@ -24,11 +23,9 @@ class ListView extends Component {
         return (
             <div className="todo-list">
                 <SavingBlock />
-                <AutoSizer>
+                <AutoSizer  >
                     {({ height, width }) => (
                         <List
-                            key={ids.length}
-                            
                             height={height}
                             width={width} 
                             rowCount={ids.length}

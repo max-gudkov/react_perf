@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import DatePicker from 'react-bootstrap-date-picker';
+import DatePicker from 'react-16-bootstrap-date-picker';
 
 class LazyDatePicker extends Component {
     state = { isClicked: false };

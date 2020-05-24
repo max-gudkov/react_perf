@@ -10,12 +10,20 @@ html, body, #root, .app {
 }
 
 .menu {
-  flex-basis: 160px;
+  flex-basis: 200px;
   background-color: #FFFFEE;
 
     a {
       display: block;
     }
+}
+
+.sub-menu {
+  margin-bottom: 20px;
+
+  &:first-child {
+    margin-bottom: 20px;
+  }
 }
 
 .main {

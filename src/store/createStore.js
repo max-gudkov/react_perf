@@ -1,11 +1,10 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
-import { routerReducer, routerMiddleware } from 'react-router-redux';
+import { connectRouter, routerMiddleware } from 'connected-react-router';
 import thunk from 'redux-thunk';
-import { batchedSubscribe } from 'redux-batched-subscribe';
-import debounce from 'lodash/debounce';
 
 import list1 from './list1';
 import list2 from './list2';
+import list3 from './list3';
 import filter from './filter';
 import date from './date';
 import isSaving from './isSaving';
@@ -20,17 +19,17 @@ export default function createAppStore(history) {
         }
     }
 
-    const debounceNotify = debounce(notify => notify(), 10);
-    const enhancers = []; // [batchedSubscribe(debounceNotify)];
+    const enhancers = [];
 
     return createStore(
         combineReducers({
             list1,
             list2,
+            list3,
             filter,
             date,
             isSaving,
-            router: routerReducer
+            router: connectRouter(history)
         }),
         composeEnhancers(
             applyMiddleware(...middleware),
@@ -38,3 +37,12 @@ export default function createAppStore(history) {
         )
     );
 };
+
+export function getList3(state) {
+    return state.list3;
+}
+
+export function getFilter(state) {
+    return state.filter;
+}
+

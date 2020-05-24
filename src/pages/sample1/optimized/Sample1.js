@@ -43,3 +43,6 @@ class Sample1 extends Component {
 }
 
 export default Sample1;
+
+// Improvements:
+// ListView got extracted to separate component and implemented as PureCompoponent to avoid reremders with itemText changes
