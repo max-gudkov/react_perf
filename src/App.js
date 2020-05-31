@@ -6,6 +6,8 @@ import { ConnectedRouter } from 'connected-react-router';
 
 import createAppStore from './store/createStore';
 
+import Sample0 from './pages/sample0/Sample0';
+
 import Sample1 from './pages/sample1/initial/Sample1';
 import Sample1_O from './pages/sample1/optimized/Sample1';
 import Sample1_H from './pages/sample1/initialHooks/Sample1';
@@ -69,6 +71,7 @@ class App extends Component {
 
                             <div className="sub-menu">
                                 Class based components
+                                <Link to="/sample0">Sample 0</Link>
                                 <Link to="/sample1">Sample 1</Link>
                                 <Link to="/sample1_o">Sample 1 (Optimized)</Link>
 
@@ -108,6 +111,7 @@ class App extends Component {
 
                         <div className="main">
                             <Switch>
+                                <Route path="/sample0" component={Sample0} />
                                 <Route path="/sample1" component={Sample1} />
                                 <Route path="/sample1_h" component={Sample1_H} />
                                 <Route path="/sample1_o" component={Sample1_O} />
