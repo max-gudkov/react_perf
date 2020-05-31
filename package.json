@@ -5,6 +5,7 @@
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^2.34.0",
     "@typescript-eslint/parser": "^2.34.0",
+    "@welldone-software/why-did-you-render": "^4.2.5",
     "autoprefixer": "7.1.2",
     "babel-core": "6.25.0",
     "babel-eslint": "^10.1.0",

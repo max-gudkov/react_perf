@@ -10,6 +10,7 @@ import { loadList1 } from '../../../store/list1';
     { loadList1 }
 )
 class Sample1 extends Component {
+    //static whyDidYouRender = true
     state = { itemText: '' };
 
     componentDidMount() {
