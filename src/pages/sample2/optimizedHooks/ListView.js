@@ -7,7 +7,7 @@ const ListView = function ListView({ list, onToggle }) {
         <div className="todo-list">
             {list.map(item => (
                 <Item
-                    key={item.id} 
+                    key={item.id}
                     item={item}
                     onToggle={onToggle}
                 />

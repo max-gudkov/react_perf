@@ -1,19 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { createSelector } from 'reselect';
 
 import ListView from './ListView';
-
-import { loadList } from '../../../../store/list2';
-
-const getFilteredIds = createSelector(
-    state => state.list2.ids,
-    state => state.list2.values,
-    state => state.filter,
-    (ids, values, filter) => {
-        return ids.filter(id => values[id].name.includes(filter));
-    }
-);
+import { loadList, getFilteredIds } from '../../../../store/list3';
 
 @connect(
     state => ({

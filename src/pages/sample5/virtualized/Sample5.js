@@ -20,3 +20,6 @@ class Sample5 extends Component {
 }
 
 export default Sample5;
+
+// Improvements:
+// react-virtualized

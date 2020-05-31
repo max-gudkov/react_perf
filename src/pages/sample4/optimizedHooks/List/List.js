@@ -1,21 +1,13 @@
 import React, { memo, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { loadList } from '../../../../store/list2';
+import { loadList, getFilteredIds } from '../../../../store/list3';
 
 import Item from '../Item/Item';
-
-const getFilteredIds = state => {
-    const ids = state.list2.ids;
-    const values = state.list2.values;
-    const filter = state.filter;
-
-    return ids.filter(id => values[id].name.includes(filter));
-};
+import SavingBlock from '../../../../components/SavingBlockHooks';
 
 const List = function ListView() {
     const ids = useSelector(getFilteredIds);
-    const isSaving = useSelector(state => state.isSaving);
 
     const dispatch = useDispatch();
     useEffect(() => {
@@ -24,7 +16,7 @@ const List = function ListView() {
 
     return (
         <div className="todo-list">
-            {isSaving && <div className="saving-block">Saving...</div>}
+            <SavingBlock />
 
             {
                 ids.map(id => (

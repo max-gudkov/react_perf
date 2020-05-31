@@ -1,7 +1,7 @@
 import React from 'react';
 
-import SavingBlock from '../../../../components/SavingBlock';
 import ItemContainer from '../Item/ItemContainer';
+import SavingBlock from '../../../../components/SavingBlock';
 
 const ListView = ({ ids }) => {
     return (

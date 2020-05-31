@@ -20,3 +20,6 @@ class Sample4 extends Component {
 }
 
 export default Sample4;
+
+// Improvements:
+// Lazy datepicker

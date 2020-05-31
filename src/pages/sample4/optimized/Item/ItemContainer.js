@@ -2,28 +2,31 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import ItemView from './ItemView';
-import { toggleTodo } from '../../../../store/list2';
+import { getItemNameById, toggleTodo, getItemIsDoneById } from '../../../../store/list3';
 
 @connect(
-    (state, ownProps) => ({ // TODO
-        item: state.list2.values[ownProps.itemId]
+    (state, {itemId}) => ({
+        id: itemId,
+        name: getItemNameById(state, itemId),
+        isDone: getItemIsDoneById(state, itemId)
     }),
     { toggleTodo }
 )
 class ItemContainer extends Component {
     toggle = () => {
         this.props.toggleTodo(
-            this.props.item.id,
-            !this.props.item.isDone
+            this.props.id,
+            !this.props.isDone
         );
     };
 
     render() {
-        const { item } = this.props;
+        const { name, isDone } = this.props;
 
         return (
             <ItemView 
-                item={item}
+                name={name}
+                isDone={isDone}
                 toggle={this.toggle} />
         );
     }

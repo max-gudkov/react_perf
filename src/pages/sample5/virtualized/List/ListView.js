@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { AutoSizer, List } from 'react-virtualized';
 import 'react-virtualized/styles.css';
 
-import SavingBlock from '../../../../components/SavingBlock';
 import ItemContainer from '../Item/ItemContainer';
+import SavingBlock from '../../../../components/SavingBlock';
 
 class ListView extends Component {
 
@@ -22,7 +22,8 @@ class ListView extends Component {
 
         return (
             <div className="todo-list">
-                <SavingBlock />
+                <SavingBlock/>
+
                 <AutoSizer  >
                     {({ height, width }) => (
                         <List

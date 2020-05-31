@@ -7,7 +7,7 @@ const ListView = ({ ids }) => {
     return (
         <div className="todo-list">
             <SavingBlock/>
-            
+
             {ids.map(id => (
                 <ItemContainer
                     key={id}

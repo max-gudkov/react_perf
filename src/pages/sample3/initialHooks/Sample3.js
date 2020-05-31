@@ -7,7 +7,7 @@ import List from './List/List';
 const Sample3 = function Sample3() {
     return (
         <div>
-            Sample 2 Hooks Optimizied reselect
+            Sample 3 Hooks
             <SaveBtn/>
             <hr/>
             <FilterTodo />

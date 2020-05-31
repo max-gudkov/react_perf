@@ -20,7 +20,8 @@ class LazyDatePicker extends Component {
         const { isClicked } = this.state;
 
         if (!isClicked) {
-             return (
+            // Fake DatePicker that mimics real one
+            return (
                 <span
                     onClick={this.onClick}
                     className="input-group">
@@ -29,7 +30,7 @@ class LazyDatePicker extends Component {
                         placeholder="DD/MM/YYYY"
                         className="form-control" />
                     <span className="input-group-addon">
-                        <div>×</div>
+                        <div>Г—</div>
                     </span>
                 </span>
             );

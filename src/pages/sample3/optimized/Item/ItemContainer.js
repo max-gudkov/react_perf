@@ -5,8 +5,8 @@ import ItemView from './ItemView';
 import { toggleTodo } from '../../../../store/list2';
 
 @connect(
-    (state, ownProps) => ({ // TODO
-        item: state.list2.values[ownProps.itemId]
+    (state, {itemId}) => ({
+        item: state.list2.values[itemId]
     }),
     { toggleTodo }
 )

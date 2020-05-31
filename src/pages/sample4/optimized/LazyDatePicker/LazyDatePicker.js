@@ -20,7 +20,7 @@ class LazyDatePicker extends Component {
         const { isClicked } = this.state;
 
         if (!isClicked) {
-            // Имитация настоящего DatePicker'а
+            // Fake DatePicker that mimics real one
             return (
                 <span
                     onClick={this.onClick}
