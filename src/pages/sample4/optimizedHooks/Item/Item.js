@@ -2,8 +2,7 @@ import React, { memo } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { getItemNameById, getItemIsDoneById, toggleTodo } from '../../../../store/list3';
-
-import DatePicker from 'react-16-bootstrap-date-picker';
+import LazyDatePicker from '../LazyDatePicker/LazyDatePicker';
 
 const Item = function Item({ itemId }) {
     const name = useSelector(state => getItemNameById(state, itemId));
@@ -21,7 +20,7 @@ const Item = function Item({ itemId }) {
                 checked={isDone}
                 onChange={onChange} />
             <div className="date-picker">
-                <DatePicker />
+                <LazyDatePicker />
             </div>
         </div>
     );

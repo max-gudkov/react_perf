@@ -1,18 +1,32 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import DatePicker from 'react-16-bootstrap-date-picker';
+import React, { Component, Suspense, lazy } from 'react';
 
-class LazyDatePicker extends Component {
+const DatePickerLazy = lazy(() => import('./DatePickerWrapper'));
+
+const RealDatePicker = ({value}) => (
+    <Suspense fallback={<DatePickerFake value={value} />}>
+        <DatePickerLazy value={value} />
+    </Suspense>
+);
+
+const DatePickerFake = ({ value, onClick }) => (
+    <span
+        onClick={onClick}
+        className="input-group">
+        <input type="text"
+            value={value}
+            placeholder="DD/MM/YYYY"
+            className="form-control" />
+        <span className="input-group-addon">
+            <div>×</div>
+        </span>
+    </span>
+);
+
+class DatePicker extends Component {
     state = { isClicked: false };
 
     onClick = () => {
         this.setState({ isClicked: true });
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-        if (prevState.isClicked !== this.state.isClicked) {
-            ReactDOM.findDOMNode(this.datepicker.refs.input).focus();
-        }
     }
 
     render() {
@@ -22,26 +36,15 @@ class LazyDatePicker extends Component {
         if (!isClicked) {
             // Fake DatePicker that mimics real one
             return (
-                <span
-                    onClick={this.onClick}
-                    className="input-group">
-                    <input type="text"
-                        value={value}
-                        placeholder="DD/MM/YYYY"
-                        className="form-control" />
-                    <span className="input-group-addon">
-                        <div>×</div>
-                    </span>
-                </span>
+                <DatePickerFake value={value} onClick={this.onClick} />
             );
-        } 
+        }
 
         return (
-            <DatePicker
-                value={value}
-                ref={dp => this.datepicker = dp} />
+            <RealDatePicker
+                value={value} />
         );
     }
 }
 
-export default LazyDatePicker;
+export default DatePicker;

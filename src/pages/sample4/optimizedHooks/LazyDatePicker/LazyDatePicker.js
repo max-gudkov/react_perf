@@ -1,8 +1,14 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { findDOMNode } from 'react-dom';
-import DatePicker from 'react-16-bootstrap-date-picker';
+import React, { Suspense, useState, lazy } from 'react';
 
-const FakeDatePicker = function FakeDatePicker({ value, onClick }) {
+const DatePickerLazy = lazy(() => import('./DatePickerWrapper'));
+
+const RealDatePicker = ({value}) => (
+    <Suspense fallback={<DatePickerFake value={value} />}>
+        <DatePickerLazy value={value} />
+    </Suspense>
+);
+
+const DatePickerFake = function FakeDatePicker({ value, onClick }) {
     return (
         <span
             onClick={onClick}
@@ -20,22 +26,12 @@ const FakeDatePicker = function FakeDatePicker({ value, onClick }) {
 
 const LazyDatePicker = function LazyDatePicker({ value }) {
     const [isClicked, setIsClicked] = useState(false);
-    const ref = useRef();
-
     const onClick = () => setIsClicked(true);
 
-    useEffect(() => {
-        if (isClicked) {
-            findDOMNode(ref.current.refs.input).focus();
-        }
-    }, [isClicked]);
-
     return isClicked ? (
-        <DatePicker
-            value={value}
-            ref={ref} />
+        <RealDatePicker value={value} />
     ) : (
-            <FakeDatePicker value={value} onClick={onClick} />
+            <DatePickerFake value={value} onClick={onClick} />
         );
 }
 
