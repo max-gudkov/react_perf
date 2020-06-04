@@ -6,7 +6,7 @@ const ItemView = ({ name, isDone, toggle }) => {
         <div className="todo-item">
             <input type="text" defaultValue={name} />
             <input type="checkbox"
-                defaultChecked={isDone}
+                checked={isDone}
                 onChange={toggle} />
             <div className="date-picker">
                 <DatePicker />

@@ -8,7 +8,7 @@ const ListView = function ListView({ list, onToggle }) {
                     key={item.id}>
                     <input type="text" defaultValue={item.name} />
                     <input type="checkbox"
-                        defaultChecked={item.isDone}
+                        checked={item.isDone}
                         onChange={() => onToggle(item)} />
                 </div>
             ))}

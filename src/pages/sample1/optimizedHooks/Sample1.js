@@ -20,7 +20,7 @@ const Sample1 = function Sample1() {
 
     return (
         <div>
-            Sample 1 Hooks
+            Sample 1 Hooks [Optimized]
             <div>
                 <input
                     type="text"

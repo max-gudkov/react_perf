@@ -21,10 +21,6 @@ class Sample2 extends Component {
         this.setState({ itemText: e.target.value });
     };
 
-    onToggle(item) {
-        this.props.toggleTodo(item.id, !item.isDone);
-    };
-
     render() {
         const { list } = this.props;
         const { itemText } = this.state;
@@ -40,7 +36,7 @@ class Sample2 extends Component {
                 <hr />
                 <ListView
                     list={list}
-                    onToggle={item => this.onToggle(item)} />
+                    onToggle={item => this.props.toggleTodo(item)} />
             </div>
         );
     }

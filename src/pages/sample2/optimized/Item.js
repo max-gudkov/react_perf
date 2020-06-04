@@ -12,7 +12,7 @@ class Item extends PureComponent {
             <div className="todo-item">
                 <input type="text" defaultValue={item.name} />
                 <input type="checkbox"
-                    defaultChecked={item.isDone}
+                    checked={item.isDone}
                     onChange={this.toggle} />
             </div>
         );

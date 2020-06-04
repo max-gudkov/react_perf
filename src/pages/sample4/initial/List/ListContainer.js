@@ -12,7 +12,7 @@ import { loadList, getFilteredIds } from '../../../../store/list3';
 )
 class ListContainer extends Component {
     componentDidMount() {
-        this.props.loadList(1000);
+        this.props.loadList(3000);
     }
 
     render() {

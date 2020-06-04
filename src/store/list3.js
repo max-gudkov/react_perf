@@ -50,7 +50,7 @@ export default function list3(state = initialState, action) {
         return { ids, values, names };
     }
     if (action.type === TOGGLE_TODO3) {
-        const { id, isDone } = action.payload.id;
+        const { id, isDone } = action.payload;
         const item = state.values[id];
 
         return {
@@ -79,7 +79,7 @@ function getNames(state) {
 }
 
 export function getItemNameById(state, id) {
-    return getList3(state).names[id].name;
+    return getNames(state)[id].name;
 }
 
 export function getItemIsDoneById(state, id) {

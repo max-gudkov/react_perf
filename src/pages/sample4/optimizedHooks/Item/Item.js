@@ -18,7 +18,7 @@ const Item = function Item({ itemId }) {
         <div className="todo-item">
             <input type="text" defaultValue={name} />
             <input type="checkbox"
-                defaultChecked={isDone}
+                checked={isDone}
                 onChange={onChange} />
             <div className="date-picker">
                 <DatePicker />

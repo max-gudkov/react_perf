@@ -30,7 +30,7 @@ class LazyDatePicker extends Component {
                         placeholder="DD/MM/YYYY"
                         className="form-control" />
                     <span className="input-group-addon">
-                        <div>Г—</div>
+                        <div>×</div>
                     </span>
                 </span>
             );

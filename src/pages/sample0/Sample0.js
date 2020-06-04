@@ -20,8 +20,6 @@ class Sample0 extends Component {
         this.setState({ itemText: e.target.value });
     }
 
-    
-
     render() {
         const { list } = this.props;
         const { itemText } = this.state;

@@ -1,11 +1,6 @@
 import React, { PureComponent } from 'react';
 
 class ListView extends PureComponent {
-
-    // componentDidUpdate(prevProps, prevState) {
-    //     console.log(this.props.list === prevProps.list);
-    // }
-
     render() {
         const { list, onToggle } = this.props;
 
@@ -16,7 +11,7 @@ class ListView extends PureComponent {
                         key={item.id}>
                         <input type="text" defaultValue={item.name} />
                         <input type="checkbox"
-                            defaultChecked={item.isDone}
+                            checked={item.isDone}
                             onChange={() => onToggle(item)} />
                     </div>
                 ))}

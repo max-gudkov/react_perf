@@ -8,7 +8,7 @@ const Item = function Item({ item, onToggle }) {
         <div className="todo-item">
             <input type="text" defaultValue={item.name} />
             <input type="checkbox"
-                defaultChecked={item.isDone}
+                checked={item.isDone}
                 onChange={onChange} />
         </div>
     );

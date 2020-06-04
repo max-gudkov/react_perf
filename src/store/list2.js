@@ -71,7 +71,7 @@ export default function list2(state = initialState, action) {
         return { ids, values };
     }
     if (action.type === TOGGLE_TODO2) {
-        const { id, isDone } = action.payload.id;
+        const { id, isDone } = action.payload;
         const item = state.values[id];
 
         return {
