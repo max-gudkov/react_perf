@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { loadList1, toggleTodo } from '../../store/list1';
+import { loadList1, toggleTodo } from '../../../store/list1';
 
 @connect(
     state => ({
