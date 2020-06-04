@@ -4,6 +4,17 @@ import { connect } from 'react-redux';
 import ListView from './ListView';
 import { loadList1, toggleTodo } from '../../../store/list1';
 
+/*
+state = {
+    list1: [
+        {id, name, isDone}
+        {id, name, isDone = !isDone} <= TOGGLE_TODO
+        {id, name, isDone}
+        {id, name, isDone}
+    ]
+}
+*/
+
 @connect(
     state => ({
         list: state.list1
