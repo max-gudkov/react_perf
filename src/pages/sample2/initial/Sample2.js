@@ -36,7 +36,7 @@ class Sample2 extends Component {
                 <hr />
                 <ListView
                     list={list}
-                    onToggle={item => this.props.toggleTodo(item)} />
+                    onToggle={item => this.props.toggleTodo(item.id, !item.isDone)} />
             </div>
         );
     }
