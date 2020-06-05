@@ -24,7 +24,7 @@ class Sample0 extends Component {
     state = { itemText: '' };
 
     componentDidMount() {
-        this.props.loadList1(3000);
+        this.props.loadList1(30);
     }
 
     changeItemText = e => {

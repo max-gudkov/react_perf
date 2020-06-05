@@ -13,7 +13,7 @@ const Sample0 = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        loadList1(3000)
+        loadList1(30)
     });
 
     return (
